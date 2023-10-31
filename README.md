@@ -28,4 +28,10 @@ These instructions will help you set up the project on your local machine.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/GSHitesh/recipe-app-api.git/
+   git clone https://github.com/GSHitesh/recipe-app-api.git
+
+2. Docker Image Build:
+
+   ```bash
+   cd receipe-app-api
+   docker-compose build
