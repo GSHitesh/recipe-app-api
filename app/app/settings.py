@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -75,10 +75,15 @@ WSGI_APPLICATION = 'app.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('DB_NAME'),     # Replace with your PostgreSQL database name
+        'USER': os.environ.get('DB_USER'),     # Replace with your PostgreSQL username
+        'PASSWORD': os.environ.get('DB_PASS'),  # Replace with your PostgreSQL password
+        'HOST': os.environ.get('DB_HOST'),        # Replace with your PostgreSQL host (e.g., 'localhost' or '127.0.0.1')
+        'PORT': '',                 # Use an empty string for the default PostgreSQL port (5432)
     }
 }
+
 
 
 # Password validation
