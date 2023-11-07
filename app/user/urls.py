@@ -3,10 +3,10 @@ URL mapping for user app
 """
 
 from django.urls import path
-from user.views import CreateUserView
+from user import views
 
 app_name='user'
 
-url_patterns = [
-    path('create/',CreateUserView.as_view(), name ='create')
+urlpatterns = [
+    path('create/',views.CreateUserView.as_view(), name ='create')
 ]
