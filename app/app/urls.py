@@ -21,8 +21,8 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     # Swagger UI:
-    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),    
-    path('api/docs/', SpectacularSwaggerView.as_view(url_name='schema'), name='api-docs'),
+    path('api/schema/', SpectacularAPIView.as_view(), name='api-schema'),    
+    path('api/docs/', SpectacularSwaggerView.as_view(url_name='api-schema'), name='api-docs'),
     path('api/schema/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redo'),
     path('api/user/',include('user.urls')),
 ]
